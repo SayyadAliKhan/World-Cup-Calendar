@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title color="primary">
+      Matches
+    </ion-title>
+    <ion-buttons end class="userinfo">
+      <h3>Welcome {{userDetails.username}}</h3>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+<div class="main">
+  <div class="wrap">
+  <div id="arrow-left" class="arrow"></div>
+  <div id="slider">
+    <div class="slide slideImage" (click)="matchdata(match)" *ngFor="let match of matchdays, let i = index">
+      <div class="slide-content">
+        <span>{{match.date}}</span>
+      </div>
+    </div>
+  </div>
+  <div id="arrow-right" class="arrow"></div>
+</div>
+
+  <div class="match-column">
+    <div class="match-details" *ngFor="let matchin of matches">
+      <div class="match-no">
+          <span>{{matchin.matchno + 1}}</span>
+      </div>
+      <div class="match-summary">
+          <div class="match-fixture">
+            <div class="match-content">
+              <div class="country">
+                <span>{{matchin.team1.code}} vs {{matchin.team2.code}}</span>
+              </div>
+              <div class="other-details">
+                <span>{{matchin.hours}}:{{matchin.minutes}} IST</span> |
+                <span>Stadium {{matchin.stadium.key}}</span> |
+                <span>{{matchin.group}}</span>
+              </div>
+            </div>
+            <div class="match-status">
+              <span>{{matchin.status}}</span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+</ion-list>
+</ion-content>

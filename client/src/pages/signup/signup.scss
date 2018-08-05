@@ -1,0 +1,13 @@
+page-signup {
+  .entry-container{
+    display: flex;
+    height: 100%;
+    text-align: center;
+
+    .entry-content{
+      margin: auto;
+      width: 30%;
+      height: 50%;
+    }
+  }
+}

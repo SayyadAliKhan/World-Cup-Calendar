@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<div class="entry-container">
+  <div class="entry-content">
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+        <ion-row>
+          <ion-col>
+            <ion-list inset>
+
+              <ion-item>
+                <ion-input type="text" placeholder="Name" name="name" [(ngModel)]="registerCredentials.name" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" email></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-input type="password" placeholder="Confirm Password" name="confirmation_password" [(ngModel)]="registerCredentials.confirmation_password" required></ion-input>
+              </ion-item>
+
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="signup-col">
+            <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Register</button>
+          </ion-col>
+        </ion-row>
+
+      </form>
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" (click)="googleService()">
+            <ion-icon ios="logo-googleplus" md="logo-googleplus"></ion-icon>
+          </button>
+          <!-- <a href="#" (click)="login()">Login Page</a> -->
+        </ion-col>
+      </ion-row>
+
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,20 @@
+page-login {
+  .entry-container{
+    display: flex;
+    height: 100vh;
+    text-align: center;
+
+    .entry-content{
+      margin: auto;
+      width: 30vw;
+      height: 50%;
+    }
+  }
+
+  @media screen and (max-width: 467px){
+    .entry-content{
+      margin: auto;
+      max-width: 29vw;
+    }
+  }
+}
