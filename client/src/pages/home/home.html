@@ -45,7 +45,12 @@
               </div>
             </div>
             <div class="match-status">
-              <span>{{matchin.status}}</span>
+              <div class="match-score">
+                <span>{{matchin.score1}} - {{matchin.score2}}</span>
+              </div>
+              <div class="match-live" *ngIf= "matchin.isLive">
+                <span>Live</span>
+              </div>
             </div>
           </div>
       </div>
