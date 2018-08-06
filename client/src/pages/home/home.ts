@@ -80,11 +80,11 @@ export class HomePage {
       }
       a.reverse();
       if(!isTodayInd){
-          if(todaysDate.getTime >= a[0].fulldate.getTime){
-            this.matches = a[0].matchday;
-          }else{
-            this.matches = a[a.length - 1].matchday;
-          }
+          if(todaysDate.getTime() < new Date(a[0].matchday[0].fulldate).getTime()){  //viewing the calendar before the tournament has started
+              this.matches = a[0].matchday;
+            }else{
+              this.matches = a[a.length - 1].matchday;
+            }
       }
       this.matchdays = a;
       setTimeout(this.loadScript(), 2000);
