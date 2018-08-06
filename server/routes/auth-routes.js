@@ -19,7 +19,7 @@ router.post("/login", (req, res) => {
         .status(404)
         .send({ access: false, mesg: "User doesn't exist in a database" });
     }
-
+  //to do: use bcrypt to get hash password
     if (user.password != password) {
       return res
         .status(400)
@@ -52,6 +52,7 @@ router.post("/register", (req, res) => {
         let filler = data.username ? "Username" : "Email ID";
         res.status(400).send({ mesg: `${filler} already exist in a database` });
       } else {
+        //to do:  bcrypt to has password before saving
         newUser.save((err, savedUser) => {
           if (err) {
             console.log(err);
